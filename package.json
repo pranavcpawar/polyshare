@@ -1,0 +1,30 @@
+{
+  "name": "polyshare",
+  "version": "0.1.0",
+  "description": "A decentralized approach for sharing data amongst peer",
+  "private": true,
+  "scripts": {
+    "build": "npx hardhat compile",
+    "deploy": "npx hardhat run ./scripts/deploy.js --network MATIC_MAINNET",
+    "deploy-mumbai": "npx hardhat run ./scripts/deploy.js --network MATIC_MUMBAI",
+    "node": "npx hardhat node",
+    "deploy-local": "npx hardhat run ./scripts/deploy.js --network localhost"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranavcpawar/polyshare.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranavcpawar/polyshare/issues"
+  },
+  "homepage": "https://github.com/pranavcpawar/polyshare#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.13.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
