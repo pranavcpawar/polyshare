@@ -1,6 +1,11 @@
 "use client";
 import Image from "next/image";
 
+export const metadata = {
+  title: 'polyshare',
+  description: 'A Decentralized approach to share amongst peer',
+};
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
