@@ -5,5 +5,9 @@ pragma solidity ^0.8.9;
 // import "hardhat/console.sol";
 
 contract Share {
+  // access 
+  // upload and store data on ipfs
+  // share access with peer
+  // store peer address in form of an access list
 
 }
