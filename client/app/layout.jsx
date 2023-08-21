@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <WagmiConfig config={config}>
-        <ConnectKitProvider mode="dark">
+        <ConnectKitProvider theme="auto" mode="dark">
           <body className={inter.className}>{children}</body>
         </ConnectKitProvider>
       </WagmiConfig>
