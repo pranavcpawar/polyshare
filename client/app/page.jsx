@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export const metadata = {
@@ -7,9 +8,9 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 grid w-full max-w-5xl items-center justify-center font-mono text-sm lg:flex">
-        <h1>App</h1>
+    <main className="flex min-h-screen w-full fixed flex-col bg-[#121212] items-center justify-between p-5">
+      <div className="grid items-center justify-center font-mono text-sm lg:flex">
+        <Navbar />
       </div>
     </main>
   );
