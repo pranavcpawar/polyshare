@@ -3,20 +3,23 @@ import { Fragment, useState } from "react";
 import { HiMiniHome, HiMiniUsers } from "react-icons/hi2";
 import { HiUpload } from "react-icons/hi";
 import ConnectButton from "./ConnectButton";
+import Link from "next/link";
 
 const NavigationTabs = [
   {
     tab: "home",
-    img: <HiMiniHome size={32} color="#656565" />
-    ,
+    icon: HiMiniHome,
+    link: "/",
   },
   {
     tab: "upload", 
-    img: <HiUpload size={32} color="#656565" />,
+    icon: HiUpload,
+    link: "/upload",
   },
   {
     tab: "users",
-    img: <HiMiniUsers size={32} color="#656565" />,
+    icon: HiMiniUsers,
+    link: "/users",
   },
 ];
 
@@ -30,12 +33,14 @@ const Navbar = () => {
         <div className="flex flex-wrap gap-10">
           {NavigationTabs.map((m) => (
             <Fragment key={m.tab}>
-              <div 
-                className={`cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center grid ${activeTab === m.tab ? "bg-[rgb(60,100,159,0.25)] outline-2 outline outline-offset-0 outline-black": ""}`}
-                onClick={() => setActiveTab(m.tab)}
-              >
-                {m.img}
-              </div>
+              <Link href={m.link}>
+                <div 
+                  className={`cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center grid ${activeTab === m.tab ? "bg-[rgba(60,100,159,0.25)] outline-2 outline outline-offset-0 outline-black": ""}`}
+                  onClick={() => setActiveTab(m.tab)}
+                >
+                  {<m.icon size="32" className={`${activeTab === m.tab ? "text-[rgb(60,100,159)]" : "text-[#656565]"}`} />}
+                </div>
+              </Link>
             </Fragment>
           ))}
           
