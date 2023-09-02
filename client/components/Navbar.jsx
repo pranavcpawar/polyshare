@@ -4,6 +4,7 @@ import { HiMiniHome, HiMiniUsers } from "react-icons/hi2";
 import { HiUpload } from "react-icons/hi";
 import ConnectButton from "./ConnectButton";
 import Link from "next/link";
+import { usePathname } from "next/navigation"
 
 const NavigationTabs = [
   {
@@ -24,7 +25,10 @@ const NavigationTabs = [
 ];
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState("home");
+  const path = usePathname();
+  const tab = path?.split("/").pop() === ""? "home": path?.split("/").pop();
+
+  const [activeTab, setActiveTab] = useState(tab);
   const currentTab = NavigationTabs.find((m) => m.tab === activeTab);
 
   return (
