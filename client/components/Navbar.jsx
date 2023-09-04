@@ -32,22 +32,21 @@ const Navbar = () => {
   const currentTab = NavigationTabs.find((m) => m.tab === activeTab);
 
   return (
-    <section>
-      <div className="bg-[#0A0A0A] hidden sm:flex flex-row gap-16 place-items-center w-[512px] h-[56px] outline outline-2 outline-offset-0 outline-[#212121] rounded-[12px] px-12 py-4">
+    <section className="fixed">
+      <div className="bg-[#0a0a0a] hidden sm:flex flex-row gap-16 place-items-center w-[500px] h-[64px] outline outline-2 outline-offset-0 outline-[#212121] rounded-[12px] px-12 py-4">
         <div className="flex flex-wrap gap-10">
           {NavigationTabs.map((m) => (
             <Fragment key={m.tab}>
               <Link href={m.link}>
                 <div 
-                  className={`cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center grid ${activeTab === m.tab ? "bg-[rgba(60,100,159,0.25)] outline-2 outline outline-offset-0 outline-black": ""}`}
+                  className={`group cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center hover:scale-110 transition-transform duration-200 ease-out grid hover:bg-[rgba(60,100,159,0.25)] ${activeTab === m.tab && "bg-[rgba(60,100,159,0.25)]"}`}
                   onClick={() => setActiveTab(m.tab)}
                 >
-                  {<m.icon size="32" className={`${activeTab === m.tab ? "text-[rgb(60,100,159)]" : "text-[#656565]"}`} />}
+                  {<m.icon size="32" className={`group-hover:text-[rgb(60,100,159)] ${activeTab === m.tab ? "text-[rgb(60,100,159)]" : "text-[#656565]"}`} />}
                 </div>
               </Link>
             </Fragment>
           ))}
-          
         </div>
         <ConnectButton />
       </div>
@@ -56,7 +55,7 @@ const Navbar = () => {
       <div className="flex sm:hidden bg-[#ffff] w-[40px] h-[40px]">
 
       </div>
-    </section>
+    </section>  
   );
 };
 
