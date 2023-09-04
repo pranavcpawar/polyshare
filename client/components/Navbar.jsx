@@ -15,12 +15,12 @@ const NavigationTabs = [
   {
     tab: "upload", 
     icon: HiUpload,
-    link: "/upload",
+    link: "upload",
   },
   {
     tab: "users",
     icon: HiMiniUsers,
-    link: "/users",
+    link: "users",
   },
 ];
 
