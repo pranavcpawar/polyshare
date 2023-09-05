@@ -1,6 +1,8 @@
 "use client";
 import { WagmiConfig, createConfig } from "wagmi";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+import Navbar from "@/components/Navbar";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -22,9 +24,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <WagmiConfig config={config}>
         <ConnectKitProvider theme="auto" mode="dark">
-          <body className={inter.className}>{children}</body>
+          <body className={inter.className} style={{background: "#121212"}}>
+            <div className="z-10 flex items-center justify-center h-[88px] w-full font-mono text-sm p-4">
+              <Navbar />
+            </div>
+            <main>{children}</main>
+          </body>
         </ConnectKitProvider>
-      </WagmiConfig>
+      </WagmiConfig> 
     </html>
   );
 };
