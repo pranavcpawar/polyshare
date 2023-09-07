@@ -1,5 +1,4 @@
 import { ConnectKitButton } from "connectkit";
-import React from "react";
 
 const ConnectButton = () => {
   return (
@@ -7,7 +6,7 @@ const ConnectButton = () => {
       <ConnectKitButton.Custom>
         {({ isConnected, truncatedAddress, show }) => {
           return (
-            <button onClick={show} className="bg-[#161618] font-bold w-[132px] h-[40px] outline outline-2 outline-offset-0 text-[#656565] hover:text-[rgba(60,100,159)] outline-[#212121] hover:scale-110 transition-transform duration-200 ease-out rounded-[12px]">
+            <button onClick={show} className="bg-[#090909] text-lg font-poppins w-[132px] h-[48px] outline outline-2 outline-offset-0 hover:text-[rgba(60,100,159)] hover:bg-[#101010] outline-[#212121] active:scale-95 transition-transform ease-in-out duration-200 rounded-[15px]">
               {isConnected ? truncatedAddress : "Connect Wallet"}
             </button>
           );
