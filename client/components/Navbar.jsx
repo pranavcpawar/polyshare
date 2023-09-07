@@ -27,13 +27,22 @@ const NavigationTabs = [
 const Navbar = () => {
   const path = usePathname();
   const tab = path?.split("/").pop() === ""? "home": path?.split("/").pop();
+  console.log("current tab:", tab);
 
   const [activeTab, setActiveTab] = useState(tab);
   const currentTab = NavigationTabs.find((m) => m.tab === activeTab);
 
   return (
     <section className="fixed">
-      <div className="bg-[#0a0a0a] hidden sm:flex flex-row gap-16 place-items-center w-[500px] h-[64px] outline outline-2 outline-offset-0 outline-[#212121] rounded-[12px] px-12 py-4">
+      <div className="bg-[#0a0a0a] hidden sm:flex flex-row gap-10 place-items-center w-[640px] h-[64px] outline outline-2 outline-offset-0 outline-[#212121] rounded-[15px] px-12 py-4">
+        <Link href="/" onClick={() => setActiveTab("home")}>
+          <div className="p-2">
+            <h1 className="font-poppins font-semibold text-xl">
+              <span className="text-[#656565]">poly</span>
+              <span className="text-[rgba(60,100,159)]">share.</span>
+            </h1>
+          </div>
+        </Link>
         <div className="flex flex-wrap gap-10">
           {NavigationTabs.map((m) => (
             <Fragment key={m.tab}>
