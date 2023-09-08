@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
       <WagmiConfig config={config}>
         <ConnectKitProvider theme="auto" mode="dark">
           <body className={inter.className} style={{background: "#121212"}}>
-            <div className="z-10 flex items-center justify-center h-[88px] w-full font-mono text-sm p-4">
+            <div className="z-10 flex items-center justify-center h-[88px] w-full text-sm p-4 mt-2.5">
               <Navbar />
             </div>
             <main>{children}</main>
