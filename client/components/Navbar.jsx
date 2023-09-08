@@ -34,7 +34,7 @@ const Navbar = () => {
 
   return (
     <section className="fixed">
-      <div className="bg-[#0a0a0a] hidden sm:flex flex-row gap-10 place-items-center w-[640px] h-[64px] outline outline-2 outline-offset-0 outline-[#212121] rounded-[15px] px-12 py-4">
+      <div className="bg-[#0a0a0a] hidden sm:flex flex-row gap-10 place-items-center w-[640px] h-[64px] rounded-[15px] px-12 py-4 shadow-[1px_2px_20px_rgba(60,100,159)]">
         <Link href="/" onClick={() => setActiveTab("home")}>
           <div className="p-2">
             <h1 className="font-poppins font-semibold text-xl">
@@ -61,7 +61,7 @@ const Navbar = () => {
       </div>
 
       {/* small screen navigation */}
-      <div className="flex sm:hidden bg-[#ffff] w-[40px] h-[40px]">
+      <div className="grid sm:hidden bg-[#ffff] w-[40px] h-[40px]">
 
       </div>
     </section>  
