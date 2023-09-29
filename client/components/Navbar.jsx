@@ -30,28 +30,25 @@ const Navbar = () => {
   console.log("current tab:", tab);
 
   const [activeTab, setActiveTab] = useState(tab);
-  const currentTab = NavigationTabs.find((m) => m.tab === activeTab);
 
   return (
-    <section className="fixed">
-      <div className="bg-[#0a0a0a] hidden sm:flex flex-row gap-10 place-items-center w-[640px] h-[64px] rounded-[15px] px-12 py-4 shadow-[1px_2px_20px_rgba(60,100,159)]">
+    <section className="z-10 pb-5 pt-2.5 px-5">
+      <div className="bg-[#12130f] hidden sm:flex flex-row gap-8 items-center justify-center h-[56px] rounded-[15px] px-12 py-5 outline outline-2 outline-offset-0 outline-border">
         <Link href="/" onClick={() => setActiveTab("home")}>
-          <div className="p-2">
             <h1 className="font-poppins font-semibold text-xl">
-              <span className="text-[#656565]">poly</span>
-              <span className="text-[rgba(60,100,159)]">share.</span>
+              <span className="text-[#EAE6E5]">poly</span>
+              <span className="text-[#5b9279]">share.</span>
             </h1>
-          </div>
         </Link>
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-5">
           {NavigationTabs.map((m) => (
             <Fragment key={m.tab}>
               <Link href={m.link}>
                 <div 
-                  className={`group cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center hover:scale-110 transition-transform duration-200 ease-out grid hover:bg-[rgba(60,100,159,0.25)] ${activeTab === m.tab && "bg-[rgba(60,100,159,0.25)]"}`}
+                  className={`group cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center hover:scale-110 transition-transform duration-200 ease-out grid ${activeTab === m.tab && "bg-[#8fcb9b48]"}`}
                   onClick={() => setActiveTab(m.tab)}
                 >
-                  {<m.icon size="32" className={`group-hover:text-[rgb(60,100,159)] ${activeTab === m.tab ? "text-[rgb(60,100,159)]" : "text-[#656565]"}`} />}
+                  {<m.icon size="32" className={`group-hover:text-[#5b9279] ${activeTab === m.tab ? "text-[#5b9279]" : "text-[#656565]"}`} />}
                 </div>
               </Link>
             </Fragment>
