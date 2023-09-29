@@ -6,7 +6,7 @@ const ConnectButton = () => {
       <ConnectKitButton.Custom>
         {({ isConnected, truncatedAddress, show }) => {
           return (
-            <button onClick={show} className="bg-[rgba(60,100,159)] text-lg font-poppins font-semibold w-[132px] h-[48px] outline outline-2 outline-offset-0 hover:bg-[rgba(60,100,159,0.6)] text-background outline-black active:scale-95 transition-transform ease-in-out duration-200 rounded-[15px]">
+            <button onClick={show} className="bg-[#8FCB9B] text-md font-poppins font-semibold w-[104px] h-[40px] outline outline-2 outline-offset-0 hover:bg-[#5B9279] text-background outline-black active:scale-95 transition-transform ease-in-out duration-200 rounded-[10px]">
               {isConnected ? truncatedAddress : "Connect"}
             </button>
           );
