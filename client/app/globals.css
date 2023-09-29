@@ -5,32 +5,68 @@
 @tailwind components;
 @tailwind utilities;
 
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.bg-gradient {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(rgba(8, 24, 18, 0) 0%, rgb(8, 24, 18) 45%);
+
+}
+
+.glow-gradient {
+  z-index: 3;
+  position: absolute;
+  top: 68px;
+  bottom: 0px;
+  background: radial-gradient(72.04% 72.04% at 50% 3.99%, #5b9279 0%, #181818 100%);
+  filter: blur(72px);
+  border-radius: 24px;
+  max-width: 480px;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+
 @layer base {
   :root {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
-
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
-
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
-
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
@@ -78,3 +114,4 @@
     @apply bg-background text-foreground;
   }
 }
+
