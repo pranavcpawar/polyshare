@@ -24,11 +24,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <WagmiConfig config={config}>
         <ConnectKitProvider theme="auto" mode="dark">
-          <body className={inter.className} style={{background: "#121212"}}>
-            <div className="z-10 flex items-center justify-center h-[88px] w-full text-sm p-4 mt-2.5">
-              <Navbar />
+          <body className="bg-[#191919]">
+            <div className="bg-gradient" />
+            <div className="main">
+              <div className="glow-gradient" />
             </div>
-            <main>{children}</main>
+            <main className="z-10 flex flex-col place-items-center max-w-7xl relative mx-auto px-8 pt-2.5">
+              <Navbar />
+              {children}
+            </main>
           </body>
         </ConnectKitProvider>
       </WagmiConfig> 
