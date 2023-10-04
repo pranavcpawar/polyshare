@@ -1,10 +1,12 @@
 "use client";
 import { Fragment, useState } from "react";
 import { HiMiniHome, HiMiniUsers } from "react-icons/hi2";
-import { HiUpload } from "react-icons/hi";
+import { HiUpload, HiOutlineMenuAlt3 } from "react-icons/hi";
 import ConnectButton from "./ConnectButton";
 import Link from "next/link";
-import { usePathname } from "next/navigation"
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import logo from "../public/icon.png"
 
 const NavigationTabs = [
   {
@@ -32,7 +34,7 @@ const Navbar = () => {
   const [activeTab, setActiveTab] = useState(tab);
 
   return (
-    <section className="z-10 pb-5 pt-2.5 px-5">
+    <section className="z-10 pt-2.5 pb-5 px-5">
       <div className="bg-[#12130f] hidden sm:flex flex-row gap-8 items-center justify-center h-[56px] rounded-[15px] px-12 py-5 outline outline-2 outline-offset-0 outline-border">
         <Link href="/" onClick={() => setActiveTab("home")}>
             <h1 className="font-poppins font-semibold text-xl">
@@ -45,10 +47,10 @@ const Navbar = () => {
             <Fragment key={m.tab}>
               <Link href={m.link}>
                 <div 
-                  className={`group cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center hover:scale-110 transition-transform duration-200 ease-out grid ${activeTab === m.tab && "bg-[#8fcb9b48]"}`}
+                  className={`group cursor-pointer rounded-[10px] h-[40px] w-[40px] place-items-center hover:scale-110 transition-transform duration-200 ease-out grid ${activeTab === m.tab && "bg-[#5b92794d]"}`}
                   onClick={() => setActiveTab(m.tab)}
                 >
-                  {<m.icon size="32" className={`group-hover:text-[#5b9279] ${activeTab === m.tab ? "text-[#5b9279]" : "text-[#656565]"}`} />}
+                  {<m.icon size="32" className={`group-hover:text-[#8FCB9B] ${activeTab === m.tab ? "text-[#8FCB9B]" : "text-[#656565]"}`} />}
                 </div>
               </Link>
             </Fragment>
