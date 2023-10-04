@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
             <div className="main">
               <div className="glow-gradient" />
             </div>
-            <main className="z-10 flex flex-col place-items-center max-w-7xl relative mx-auto px-8 pt-2.5">
+            <main className="z-10 flex flex-col sm:place-items-center max-w-7xl relative sm:mx-auto sm:px-8">
               <Navbar />
               {children}
             </main>
