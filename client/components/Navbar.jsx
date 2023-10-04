@@ -58,8 +58,23 @@ const Navbar = () => {
       </div>
 
       {/* small screen navigation */}
-      <div className="grid sm:hidden bg-[#ffff] w-[40px] h-[40px]">
-
+      <div className="flex flex-row sm:hidden items-center bg-[#12130f] justify-between h-[56px] px-4 py-4 gap-8 rounded-xl">
+        <Link href="/" onClick={() => setActiveTab("home")}>
+          <Image src={logo} alt="logo" height={40} width={40} />
+        </Link>
+        <ConnectButton />
+        <HiOutlineMenuAlt3 className="text-[#5b9279] h-10 w-10 cursor-pointer" />
+      </div>
+      <div className="mobile-navbar flex sm:hidden bg-[#0a0a0a] items-center font-poppins font-medium text-lg text-[#656565] m-[8px] px-[16px] rounded-xl">
+        <Link href="/" onClick={() => setActiveTab("home")}>
+          <h1 className={`hover:bg-[#99A1BD14] px-[8px] py-[4px] rounded-xl ${activeTab === "home" ? "text-[#8FCB9B]": ""}`}>Home</h1>
+        </Link>
+        <Link href="/upload" onClick={() => setActiveTab("upload")}>
+          <h1 className={`hover:bg-[#99A1BD14] px-[8px] py-[4px] rounded-xl ${activeTab === "upload" ? "text-[#8FCB9B]": ""}`}>Upload</h1>
+        </Link>
+        <Link href="/users" onClick={() => setActiveTab("users")}>
+          <h1 className={`hover:bg-[#99A1BD14] px-[8px] py-[4px] rounded-xl ${activeTab === "users" ? "text-[#8FCB9B]": ""}`}>Users</h1>
+        </Link>
       </div>
     </section>  
   );
